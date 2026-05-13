@@ -1,25 +1,29 @@
+import kotlin.math.min
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
-//    val name = "Kotlin"
-//    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-//    // to see how IntelliJ IDEA suggests fixing it.
-//    println("Hello, " + name + "!")
-//
-//    for (i in 1..5) {
-//        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-//        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-//        println("i = $i")
-//    }
 
-    val nums = intArrayOf(3, 30, 34, 5, 9)
+
+    val nums = intArrayOf(89, 30, 34, -1,5, 9, 1, 0, 98)
     val numsreverse = intArrayOf(1, 2, 3, 4)
-    val reverseString = "Android"
-    println("smalles:: ${smallestNumber(nums)}")
-    println("revserse:: ${reverseArray(numsreverse)}")
-    println("revserseresult:: ${reverseString(reverseString)}")
+    val reverseString = "android"
+//    val palindarome = "madam"
+//   println("smalles:: ${smallestNumber(nums)}")
+//   println("largest:: ${largestNumber(nums)}")
+   println("revserse:: ${reverseArray(numsreverse)}")
+//    println("revserseresult:normal: ${reverseString(reverseString)}")
+//   println("revserseresult2::reverseStringTwoPointer:: ${reverseStringTwoPointer(reverseString)}")
+//    println("isPalindrome:: ${isPalindromeimproved(palindarome)}")
+//    println("checkNonRepeatAlphabet:: ${checkNonRepeatAlphabet(" \"swiss\"\n"
+//            )}")
+
+   // println("Integer${digitDividedByTwo(arrayOf(1,2,2,3,4,4))}")
+  //  println("Reverse${reverse(123)}")
 
 
+   // println("climb${climbStairs(5)}")
+    println("coin${coinChange(intArrayOf(1,5, 10), 11)}")
 }
 
 fun largestNumber(nums: IntArray): String {
@@ -37,11 +41,13 @@ fun largestNumber(nums: IntArray): String {
 
 fun smallestNumber(nums: IntArray): String {
     var smallest = nums[0]
-
     for (num in nums) {
-        if (num < smallest) {
+       // if (num < smallest) {
+        if (smallest > num ) {
+
             smallest = num
-            println(smallest)
+        }else{
+            println("smallnot"+num)
         }
     }
 
@@ -63,8 +69,149 @@ fun reverseArray(nums: IntArray) {
 
 fun reverseString(word: String): String {
     var reverseResult = ""
-    for (i in word.length - 1 downTo 1) {
+    for (i in word.length - 1 downTo 0) {
         reverseResult += word[i]
     }
     return reverseResult
+}
+fun reverseStringTwoPointer(wordString: String){
+    var start = 0
+    val charword= wordString.toCharArray()
+
+    var end = charword.size-1
+    while (start < end) {
+        val temp = charword[start]
+        charword[start] = charword[end]
+        charword[end] = temp
+        start++
+        end--
+    }
+    println(charword.joinToString().toString())
+}
+
+fun isPalindrome(word: String): Boolean{
+
+   var reverseResult=""
+    for (i in word.length - 1 downTo 0) {
+        reverseResult += word[i]
+    }
+    println(reverseResult)
+    return (reverseResult==word)
+}
+fun isPalindromeimproved(word: String): Boolean {
+
+    var start = 0
+    var end = word.length - 1
+
+    while (start < end) {
+        if (word[start] != word[end]) {
+            return false
+        }
+        start++
+        end--
+    }
+
+    return true
+}
+
+//fun checkVowels(word: String): String{
+//     val vowels = arrayOf('a', 'e', 'i', 'o', 'u')
+//     val charry= word.toCharArray()
+//
+//    for (i in charry){
+//        for (j in vowels){
+//            if (charry[i]==vowels[j]){
+//
+//            }
+//                j++
+//        }
+//        i++
+//    }
+//}
+
+fun checkNonRepeatAlphabet(str: String): Char? {
+
+    for (i in str.indices) {
+        var count = 0
+
+        for (j in str.indices) {
+            if (str[i] == str[j]) {
+                count++
+            }
+        }
+
+        if (count == 1) {
+            return str[i]
+        }
+    }
+
+    return null
+}
+fun firstNonRepeatingChar(str: String): Char? {
+
+    val map = mutableMapOf<Char, Int>()
+
+    // Step 1: Count frequency
+    for (ch in str) {
+        map[ch] = map.getOrDefault(ch, 0) + 1
+    }
+
+    // Step 2: Find first unique
+    for (ch in str) {
+        if (map[ch] == 1) {
+            return ch
+        }
+    }
+
+    return null
+}
+//Input: [1,2,2,3,4,4]
+//Output: [2,4]
+fun digitDividedByTwo(nums: Array<Int>): ArrayList<Int>? {
+    val arr = ArrayList<Int>()
+    for (i in nums){
+        if (i % 2 == 0 &&  !arr.contains(i)){
+            arr.add(i)
+        }
+    }
+    return arr
+}
+//Input: [2,7,11,15], target = 9
+//Output: [0,1]
+//
+//Input: x = 123
+//Output: 321
+//fun reverse(x: Int): Int {
+//
+//}
+
+fun climbStairs(n: Int): Int {
+    val dp = IntArray(n + 1)
+
+    dp[1] = 1          // step 1 = 1 way
+    dp[2] = 2          // step 2 = 2 ways
+
+    for (i in 3..n) {
+        println("dp :: ${i}")
+        dp[i] = dp[i-1] + dp[i-2]  // current = previous + one before
+        println("Next dp ${dp[i]}")
+    }
+
+    return dp[n]
+}
+fun coinChange(coins: IntArray, amount: Int): Int {
+    val dp = IntArray(amount + 1) { amount + 1 }
+
+    dp[0] = 0                    // ✅ blank 1
+
+    for (i in 1..amount) {
+        for (coin in coins) {
+            if (coin <= i) {
+                println("coin::${coin}")
+                dp[i] = min(dp[i], dp[i - coin] + 1)  // ✅ blank 2, 3
+            }
+        }
+    }
+
+    return if (dp[amount] > amount) -1 else dp[amount]  // ✅ blank 4
 }
