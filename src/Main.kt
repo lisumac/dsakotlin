@@ -11,7 +11,7 @@ fun main() {
 //    val palindarome = "madam"
 //   println("smalles:: ${smallestNumber(nums)}")
 //   println("largest:: ${largestNumber(nums)}")
-   println("revserse:: ${reverseArray(numsreverse)}")
+  // println("revserse:: ${reverseArray(numsreverse)}")
 //    println("revserseresult:normal: ${reverseString(reverseString)}")
 //   println("revserseresult2::reverseStringTwoPointer:: ${reverseStringTwoPointer(reverseString)}")
 //    println("isPalindrome:: ${isPalindromeimproved(palindarome)}")
@@ -23,7 +23,32 @@ fun main() {
 
 
    // println("climb${climbStairs(5)}")
-    println("coin${coinChange(intArrayOf(1,5, 10), 11)}")
+   // println("coin${coinChange(intArrayOf(1,5, 10), 11)}")
+
+//    val randomSet = RandomSet()
+//
+//    println(randomSet.insert(10))
+//
+//    println(randomSet.insert(20))
+//
+//    println(randomSet.insert(30))
+//
+//    randomSet.printData()
+//
+//    println("Remove 20")
+//
+//    randomSet.remove(20)
+//
+//    randomSet.printData()
+//
+//    println("Random Element: ${randomSet.getRandom()}")
+
+
+    val practiceForWalmart = PracticeForWalmart()
+   val s = "()[]{}"
+  //  practiceForWalmart.twoNumsWithN(intArrayOf(2,7,11,15), 9)
+
+    println("Random Element: ${practiceForWalmart.isValid(s)}")
 }
 
 fun largestNumber(nums: IntArray): String {
@@ -214,4 +239,51 @@ fun coinChange(coins: IntArray, amount: Int): Int {
     }
 
     return if (dp[amount] > amount) -1 else dp[amount]  // ✅ blank 4
+}
+
+class RandomSet {
+
+    private val list = mutableListOf<Int>()
+
+    private val map = mutableMapOf<Int, Int>()
+
+    fun insert(value: Int): Boolean {
+
+        if (map.containsKey(value)) return false
+
+        list.add(value)
+
+        map[value] = list.lastIndex
+
+        return true
+    }
+
+    fun remove(value: Int): Boolean {
+
+        if (!map.containsKey(value)) return false
+
+        val index = map[value]!!
+
+        val lastElement = list.last()
+
+        list[index] = lastElement
+
+        map[lastElement] = index
+
+        list.removeAt(list.lastIndex)
+
+        map.remove(value)
+
+        return true
+    }
+
+    fun getRandom(): Int {
+
+        return list.random()
+    }
+
+    fun printData() {
+        println(list)
+        println(map)
+    }
 }
