@@ -21,6 +21,8 @@ fun main() {
    // println("Integer${digitDividedByTwo(arrayOf(1,2,2,3,4,4))}")
   //  println("Reverse${reverse(123)}")
 
+    println(convert(4, "1011" ))
+
 
    // println("climb${climbStairs(5)}")
    // println("coin${coinChange(intArrayOf(1,5, 10), 11)}")
@@ -44,11 +46,17 @@ fun main() {
 //    println("Random Element: ${randomSet.getRandom()}")
 
 
-    val practiceForWalmart = PracticeForWalmart()
-   val s = "()[]{}"
-  //  practiceForWalmart.twoNumsWithN(intArrayOf(2,7,11,15), 9)
-
-    println("Random Element: ${practiceForWalmart.isValid(s)}")
+//    val practiceForWalmart = PracticeForWalmart()
+//   val s = "()[]{}"
+//  //  practiceForWalmart.twoNumsWithN(intArrayOf(2,7,11,15), 9)
+//
+//   // println("Random Element: ${practiceForWalmart.isValid(s)}")
+//    val numsArray = intArrayOf(1,2,3,4,4)
+//    val sU = "racecar"
+//    val t = "carrace"
+//
+//   // println("Random Element: ${practiceForWalmart.getConcatenation(numsArray)}")
+//    println("Random Element: ${practiceForWalmart.isAnagram(sU, t)}")
 }
 
 fun largestNumber(nums: IntArray): String {
@@ -241,6 +249,31 @@ fun coinChange(coins: IntArray, amount: Int): Int {
     return if (dp[amount] > amount) -1 else dp[amount]  // ✅ blank 4
 }
 
+
+
+
+
+fun convert(n : Int,  str: String): Int {
+    var result = 0;
+    for (digit in str){
+        result = result * 2 + (digit- '0')
+    }
+return result
+}
+
+fun alphaPattern(n: Int) {
+
+    for (i in 1..n) {
+
+        val ch = 'A' + (i - 1)
+
+        for (j in 1..i) {
+            print(ch)
+        }
+
+        println()
+    }
+}
 class RandomSet {
 
     private val list = mutableListOf<Int>()
