@@ -1,3 +1,4 @@
+import string.TwoPointer
 import kotlin.math.min
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -21,7 +22,7 @@ fun main() {
    // println("Integer${digitDividedByTwo(arrayOf(1,2,2,3,4,4))}")
   //  println("Reverse${reverse(123)}")
 
-    println(convert(4, "1011" ))
+    //println(convert(4, "1011" ))
 
 
    // println("climb${climbStairs(5)}")
@@ -57,6 +58,14 @@ fun main() {
 //
 //   // println("Random Element: ${practiceForWalmart.getConcatenation(numsArray)}")
 //    println("Random Element: ${practiceForWalmart.isAnagram(sU, t)}")
+
+val s = charArrayOf('h', 'e', 'l', 'l', 'o')
+    val twoPointer = TwoPointer()
+    val result = twoPointer.reverseString(charArrayOf('h','e','l','l','o'))
+
+   // println(result.contentToString())
+    val isTwoPinterPalindrome = twoPointer.isPalindrome("a.")
+    println("isTwoPinterPalindrome$isTwoPinterPalindrome")
 }
 
 fun largestNumber(nums: IntArray): String {
