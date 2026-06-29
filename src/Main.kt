@@ -61,11 +61,20 @@ fun main() {
 
 val s = charArrayOf('h', 'e', 'l', 'l', 'o')
     val twoPointer = TwoPointer()
-    val result = twoPointer.reverseString(charArrayOf('h','e','l','l','o'))
+   // val result = twoPointer.reverseString(charArrayOf('h','e','l','l','o'))
 
    // println(result.contentToString())
-    val isTwoPinterPalindrome = twoPointer.isPalindrome("a.")
-    println("isTwoPinterPalindrome$isTwoPinterPalindrome")
+    //val isTwoPinterPalindrome = twoPointer.isPalindrome("a.")
+  //  println("isTwoPinterPalindrome$isTwoPinterPalindrome")
+
+//    val mergeWord = twoPointer.mergeAlternately("abcd", "pq")
+//    println("merged string:::::"+mergeWord)
+
+   // val largetString = twoPointer.gcdOfStrings("AAAAAB", "AAA")
+   // val validPalindrom = twoPointer.validPalindrome("abca")
+    val validPalindrom = twoPointer.longestPalindrome("babad")
+   // println("larget string: $largetString")
+    println("validPalindrom: $validPalindrom")
 }
 
 fun largestNumber(nums: IntArray): String {
