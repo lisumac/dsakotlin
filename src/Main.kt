@@ -9,6 +9,7 @@ fun main() {
     val nums = intArrayOf(89, 30, 34, -1,5, 9, 1, 0, 98)
     val numsreverse = intArrayOf(1, 2, 3, 4)
     val reverseString = "android"
+
 //    val palindarome = "madam"
 //   println("smalles:: ${smallestNumber(nums)}")
 //   println("largest:: ${largestNumber(nums)}")
