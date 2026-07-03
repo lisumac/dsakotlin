@@ -1,4 +1,5 @@
 import string.TwoPointer
+import string.slidingwindow.SlidingWindow
 import kotlin.math.min
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -73,9 +74,14 @@ val s = charArrayOf('h', 'e', 'l', 'l', 'o')
 
    // val largetString = twoPointer.gcdOfStrings("AAAAAB", "AAA")
    // val validPalindrom = twoPointer.validPalindrome("abca")
-    val validPalindrom = twoPointer.longestPalindrome("babad")
+    //val validPalindrom = twoPointer.longestPalindrome("babad")
    // println("larget string: $largetString")
-    println("validPalindrom: $validPalindrom")
+   // println("validPalindrom: $validPalindrom")
+
+    val silding= SlidingWindow()
+    val subarry = silding.longestNiceSubstring("YazaAay")
+    val maximumSubarraySum = silding.maximumSubarraySum(intArrayOf(1,5,4,2,9,9,9), 3)
+    println("maximumSubarraySum: $maximumSubarraySum")
 }
 
 fun largestNumber(nums: IntArray): String {
