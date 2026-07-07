@@ -10,8 +10,8 @@ class SlidingWindow {
     fun longestNiceSubstring(s: String): String {
 
         var ans = ""
-        var start = 0
-        var end = s.length
+        val start = 0
+        val end = s.length
 
 
 
@@ -49,7 +49,7 @@ class SlidingWindow {
 
 
             }
-            if (subarry.dis)
+            //if (subarry.dis)
             return maxSum.toLong()
 
         }
@@ -75,5 +75,6 @@ class SlidingWindow {
         }
 
 
+        return TODO("Provide the return value")
     }
 }
