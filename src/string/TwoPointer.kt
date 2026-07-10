@@ -169,6 +169,44 @@ class TwoPointer {
 
         return r - l - 1
     }
+
+    fun targetTwoSum(arry: IntArray, target: Int): Boolean {
+        var sum = 0
+        var isgetTarget=false
+
+        for (i in arry.indices) {
+
+            for (j in i+1 until arry.size){
+                sum= arry[i] + arry[j ]
+
+                if (sum == target) {
+                    isgetTarget = true
+                }
+
+
+            }
+        }
+        return isgetTarget
+    }
+    fun twoSum(arry: IntArray, target: Int): IntArray {
+
+
+
+        for (i in arry.indices) {
+
+            for (j in i+1 until arry.size){
+                if (arry[i] + arry[j] == target) {
+                    return intArrayOf(i+1, j+1)
+                }
+
+
+            }
+        }
+
+
+        return intArrayOf()
+    }
+
 }
 
 

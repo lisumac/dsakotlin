@@ -77,11 +77,15 @@ val s = charArrayOf('h', 'e', 'l', 'l', 'o')
     //val validPalindrom = twoPointer.longestPalindrome("babad")
    // println("larget string: $largetString")
    // println("validPalindrom: $validPalindrom")
+    val numsArray = intArrayOf(10, 20, 35, 50)
+    val  twosum= twoPointer.targetTwoSum(numsArray,70)
+    val  twosumarray= twoPointer.twoSum(numsArray,70)
+    println("twosum: $twosum")
+    println("twosumarray: $twosumarray")
+//    val silding= SlidingWindow()
+//    val subarry = silding.longestNiceSubstring("YazaAay")
+//    val maximumSubarraySum = silding.maximumSubarraySum(intArrayOf(1,5,4,2,9,9,9), 3)
 
-    val silding= SlidingWindow()
-    val subarry = silding.longestNiceSubstring("YazaAay")
-    val maximumSubarraySum = silding.maximumSubarraySum(intArrayOf(1,5,4,2,9,9,9), 3)
-    println("maximumSubarraySum: $maximumSubarraySum")
 }
 
 fun largestNumber(nums: IntArray): String {
