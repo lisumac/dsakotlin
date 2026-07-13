@@ -1,7 +1,5 @@
 package string
 
-import kotlin.math.max
-
 class TwoPointer {
 
     fun reverseString(s: CharArray): CharArray {
@@ -172,12 +170,12 @@ class TwoPointer {
 
     fun targetTwoSum(arry: IntArray, target: Int): Boolean {
         var sum = 0
-        var isgetTarget=false
+        var isgetTarget = false
 
         for (i in arry.indices) {
 
-            for (j in i+1 until arry.size){
-                sum= arry[i] + arry[j ]
+            for (j in i + 1 until arry.size) {
+                sum = arry[i] + arry[j]
 
                 if (sum == target) {
                     isgetTarget = true
@@ -188,15 +186,15 @@ class TwoPointer {
         }
         return isgetTarget
     }
-    fun twoSum(arry: IntArray, target: Int): IntArray {
 
+    fun twoSum(arry: IntArray, target: Int): IntArray {
 
 
         for (i in arry.indices) {
 
-            for (j in i+1 until arry.size){
+            for (j in i + 1 until arry.size) {
                 if (arry[i] + arry[j] == target) {
-                    return intArrayOf(i+1, j+1)
+                    return intArrayOf(i + 1, j + 1)
                 }
 
 
@@ -205,6 +203,45 @@ class TwoPointer {
 
 
         return intArrayOf()
+    }
+
+    fun moveZeroes(nums: IntArray): Unit {
+        var index = 0
+        val temp = IntArray(nums.size)
+
+        for (i in nums.indices) {
+            if (nums[i] != 0) {
+                temp[index++] = nums[i]
+
+            }
+
+        }
+
+        for (i in temp.indices) {
+            nums[i] = temp[i]
+        }
+
+
+    }
+
+    fun removeDuplicates(nums: IntArray): Int {
+        val tempArry = ArrayList<Int>(nums.size)
+        tempArry.add(nums[0])
+        var index = 0
+
+        for (i in nums.indices) {
+
+            if (tempArry[index] != nums[i]) {
+                tempArry.add(nums[i])
+                index++
+            }
+        }
+
+        for (i in tempArry.indices) {
+            nums[i] = tempArry[i]
+        }
+        return tempArry.size
+
     }
 
 }

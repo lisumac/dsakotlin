@@ -80,8 +80,14 @@ val s = charArrayOf('h', 'e', 'l', 'l', 'o')
     val numsArray = intArrayOf(10, 20, 35, 50)
     val  twosum= twoPointer.targetTwoSum(numsArray,70)
     val  twosumarray= twoPointer.twoSum(numsArray,70)
-    println("twosum: $twosum")
-    println("twosumarray: $twosumarray")
+    val  input= intArrayOf(10, 20, 30)
+    val  moveZero= twoPointer.moveZeroes(input)
+    val duplicateArry= intArrayOf(0,0,1,1,1,2,2,3,3,4)
+    val  removeDuplicates= twoPointer.removeDuplicates(duplicateArry)
+    println("removeDuplicates: $removeDuplicates")
+
+
+
 //    val silding= SlidingWindow()
 //    val subarry = silding.longestNiceSubstring("YazaAay")
 //    val maximumSubarraySum = silding.maximumSubarraySum(intArrayOf(1,5,4,2,9,9,9), 3)
