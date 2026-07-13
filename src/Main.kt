@@ -84,7 +84,7 @@ val s = charArrayOf('h', 'e', 'l', 'l', 'o')
     val  moveZero= twoPointer.moveZeroes(input)
     val duplicateArry= intArrayOf(0,0,1,1,1,2,2,3,3,4)
     val  removeDuplicates= twoPointer.removeDuplicates(duplicateArry)
-    val  reverseWords= twoPointer.reverseWords("Mr Ding")
+    val  reverseWords= twoPointer.reverseWordsten("Mr Ding")
     println("removeDuplicates: $reverseWords")
 
 

@@ -269,12 +269,14 @@ class TwoPointer {
 
         return result.toString()
     }
-    class Solution {
-        fun reverseWords(s: String): String {
+
+        fun reverseWordsten(s: String): String {
             val chars = s.toCharArray()
             var start= 0
             for( i in chars.indices){
+                print(chars[i]+"\n")
                 if(i == chars.lastIndex || chars[i] == ' '){
+
                     var left = start
                     var right = if (chars[i] == ' ') i - 1 else i
                     while (left < right) {
@@ -286,11 +288,12 @@ class TwoPointer {
                     }
 
                     start = i + 1
+                    print("start${start}\n")
                 }
             }
             return String(chars)
         }
-    }
+
 
 }
 
