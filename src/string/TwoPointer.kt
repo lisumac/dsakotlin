@@ -244,6 +244,54 @@ class TwoPointer {
 
     }
 
+    fun reverseWords(s: String): String {
+
+        val result = StringBuilder()
+        var start = 0
+
+        for (i in s.indices) {
+
+            if (s[i] == ' ') {
+
+                for (j in i - 1 downTo start) {
+                    result.append(s[j])
+                }
+
+                result.append(' ')
+                start = i + 1
+            }
+        }
+
+        // Reverse the last word
+        for (i in s.lastIndex downTo start) {
+            result.append(s[i])
+        }
+
+        return result.toString()
+    }
+    class Solution {
+        fun reverseWords(s: String): String {
+            val chars = s.toCharArray()
+            var start= 0
+            for( i in chars.indices){
+                if(i == chars.lastIndex || chars[i] == ' '){
+                    var left = start
+                    var right = if (chars[i] == ' ') i - 1 else i
+                    while (left < right) {
+                        val temp = chars[left]
+                        chars[left] = chars[right]
+                        chars[right] = temp
+                        left++
+                        right--
+                    }
+
+                    start = i + 1
+                }
+            }
+            return String(chars)
+        }
+    }
+
 }
 
 
