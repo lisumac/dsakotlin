@@ -93,6 +93,10 @@ val s = charArrayOf('h', 'e', 'l', 'l', 'o')
     println("sumTarget: $sumTarget")
     println("twoSumHashMap: $twoSumHashMap")
 
+    var arrRotate = intArrayOf(7, 9, 1, 3, 5)
+    val rotatetarget = 6
+    val pairInSortedRotated= twoPointer.pairInSortedRotated(arrRotate, target = rotatetarget)
+
 
 
 //    val silding= SlidingWindow()

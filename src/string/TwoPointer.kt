@@ -331,6 +331,16 @@ class TwoPointer {
         }
         return intArrayOf()
     }
+
+    fun pairInSortedRotated(arr: IntArray?, target: Int): Boolean {
+
+        //Input: arr[] = [7, 9, 1, 3, 5], target = 6
+        //Output: true
+        //Explanation: arr[2] and arr[4] has sum equals to 6 which is equal to the target.
+
+
+
+    }
 }
 
 
