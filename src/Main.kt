@@ -84,8 +84,14 @@ val s = charArrayOf('h', 'e', 'l', 'l', 'o')
     val  moveZero= twoPointer.moveZeroes(input)
     val duplicateArry= intArrayOf(0,0,1,1,1,2,2,3,3,4)
     val  removeDuplicates= twoPointer.removeDuplicates(duplicateArry)
-    val  reverseWords= twoPointer.reverseWordsten("Mr Ding")
-    println("removeDuplicates: $reverseWords")
+  //      val  reverseWords= twoPointer.reverseWordsten("Mr Ding")
+   // println("removeDuplicates: $reverseWords")
+
+    val arr= intArrayOf(3,2,4)
+    val sumTarget= twoPointer.twoSumGeek(arr, target = 6)
+    val twoSumHashMap= twoPointer.twoSumHashMap(arr, target = 6)
+    println("sumTarget: $sumTarget")
+    println("twoSumHashMap: $twoSumHashMap")
 
 
 

@@ -270,31 +270,67 @@ class TwoPointer {
         return result.toString()
     }
 
-        fun reverseWordsten(s: String): String {
-            val chars = s.toCharArray()
-            var start= 0
-            for( i in chars.indices){
-                print(chars[i]+"\n")
-                if(i == chars.lastIndex || chars[i] == ' '){
+    fun reverseWordsten(s: String): String {
+        val chars = s.toCharArray()
+        var start = 0
+        for (i in chars.indices) {
+            print(chars[i] + "\n")
+            if (i == chars.lastIndex || chars[i] == ' ') {
 
-                    var left = start
-                    var right = if (chars[i] == ' ') i - 1 else i
-                    while (left < right) {
-                        val temp = chars[left]
-                        chars[left] = chars[right]
-                        chars[right] = temp
-                        left++
-                        right--
-                    }
+                var left = start
+                var right = if (chars[i] == ' ') i - 1 else i
+                while (left < right) {
+                    val temp = chars[left]
+                    chars[left] = chars[right]
+                    chars[right] = temp
+                    left++
+                    right--
+                }
 
-                    start = i + 1
-                    print("start${start}\n")
+                start = i + 1
+                // print("start${start}\n")
+            }
+        }
+        return String(chars)
+    }
+
+    fun twoSumGeek(arr: IntArray, target: Int): Boolean {
+
+
+        var sum = 0
+        val map = HashMap<Int, Int>()
+//1, -2, 1, 0, 5 =0
+
+        for (i in arr.indices) {
+            print("sum: +arr[i]" + arr[i] + "\n")
+            for (j in i + 1 until arr.size) {
+                print("sum: +arr[j]" + arr[j] + "\n")
+                sum = arr[i] + arr[j]
+                print("sum:>> $sum\n")
+                if (sum == target) {
+                    return true
                 }
             }
-            return String(chars)
         }
+        return false
+    }
+
+    fun twoSumHashMap(nums: IntArray, target: Int): IntArray {
 
 
+        var sum = 0
+        for (i in nums.indices) {
+            for (j in i + 1 until nums.size) {
+                sum = nums[i] + nums[j]
+
+                if (sum == target) {
+                    println("value${nums[i]}${nums[j]} ")
+                    return intArrayOf(nums[i], nums[j])
+                }
+            }
+        }
+        return intArrayOf()
+    }
 }
 
 
