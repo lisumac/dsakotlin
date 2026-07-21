@@ -332,14 +332,70 @@ class TwoPointer {
         return intArrayOf()
     }
 
-    fun pairInSortedRotated(arr: IntArray?, target: Int): Boolean {
+    fun pairInSortedRotated(arr: IntArray, target: Int): Boolean {
 
         //Input: arr[] = [7, 9, 1, 3, 5], target = 6
         //Output: true
         //Explanation: arr[2] and arr[4] has sum equals to 6 which is equal to the target.
+        if (arr.size < 2) return false
+        var sum = 0
+        var min = arr[0]
+        for (i in 0 until arr.size) {
+            if (arr[i] < min) {
+                min = arr[i]
+
+            }
+
+        }
+        for (i in arr.indices) {
+            sum = min + arr[i]
+            print("sum>>>: $sum\n")
+            if (sum == target) {
+                print("pair"+arr[i])
+                return true
+            }
+        }
 
 
 
+        return false
+    }
+
+    fun pairInSortedRotatedalgo(arr: IntArray, target: Int): Boolean {
+
+        val n = arr.size
+        if (n < 2) return false
+
+        // Find pivot (largest element)
+        var pivot = 0
+        for (i in 0 until n - 1) {
+            if (arr[i] > arr[i + 1]) {
+                pivot = i
+                break
+            }
+        }
+
+        var left = pivot + 1
+        if (left == n) left = 0
+
+        var right = pivot
+
+        while (left != right) {
+
+            val sum = arr[left] + arr[right]
+
+            if (sum == target) {
+                return true
+            } else if (sum < target) {
+                left++
+                if (left == n) left = 0
+            } else {
+                right--
+                if (right < 0) right = n - 1
+            }
+        }
+
+        return false
     }
 }
 
