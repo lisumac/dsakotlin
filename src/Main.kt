@@ -93,11 +93,12 @@ fun main() {
 //    println("sumTarget: $sumTarget")
 //    println("twoSumHashMap: $twoSumHashMap")
 
-    var arrRotate = intArrayOf(1)
-    val rotatetarget = 1
-    val pairInSortedRotated = twoPointer.pairInSortedRotated(arrRotate, target = rotatetarget)
-    val pairInSortedRotatedalgo = twoPointer.pairInSortedRotatedalgo(arrRotate, target = rotatetarget)
-    print("pairInSortedRotated:::$pairInSortedRotatedalgo")
+    var arrRotate = intArrayOf(5, 2, 7, 1, 4)
+    val rotatetarget = 10
+   // val pairInSortedRotated = twoPointer.pairInSortedRotated(arrRotate, target = rotatetarget)
+   // val pairInSortedRotatedalgo = twoPointer.pairInSortedRotatedalgo(arrRotate, target = rotatetarget)
+    val sumClosest = twoPointer.sumClosest(arrRotate, target = rotatetarget)
+    print("sumClosest:::$sumClosest")
 
 
 //    val silding= SlidingWindow()

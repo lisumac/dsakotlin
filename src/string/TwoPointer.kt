@@ -1,5 +1,8 @@
 package string
 
+import kotlin.math.abs
+
+
 class TwoPointer {
 
     fun reverseString(s: CharArray): CharArray {
@@ -351,7 +354,7 @@ class TwoPointer {
             sum = min + arr[i]
             print("sum>>>: $sum\n")
             if (sum == target) {
-                print("pair"+arr[i])
+                print("pair" + arr[i])
                 return true
             }
         }
@@ -396,6 +399,42 @@ class TwoPointer {
         }
 
         return false
+    }
+
+    fun sumClosest(arr: IntArray?, target: Int): ArrayList<Int?>? {
+        var currentSum = 0
+        var currentSumDiff = 0
+        var minDiff = Int.MAX_VALUE
+        val res = ArrayList<Int?>()
+        var bestGap = -1
+
+        for (i in arr!!.indices) {
+            print("sumClosest: " + arr[i] + "\n")
+            for (j in i + 1 until arr.size) {
+                print(arr[j])
+                currentSum = arr[j] + arr[i]
+                currentSumDiff = abs(currentSum - target)
+                if (currentSumDiff < minDiff) {
+                    minDiff = currentSumDiff
+                    res.clear()
+                    res.add(arr[j])
+                    res.add(arr[i])
+                } else if (currentSumDiff == minDiff) {
+
+                    val gap = abs(arr[i] - arr[j])
+
+                    if (gap > bestGap) {
+                        bestGap = gap
+
+                        res.clear()
+                        res.add(arr[i])
+                        res.add(arr[j])
+                    }
+                }
+            }
+        }
+        return res
+        // code here
     }
 }
 
