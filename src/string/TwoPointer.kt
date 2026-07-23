@@ -438,30 +438,30 @@ class TwoPointer {
         // code here
     }
 
-//    fun findClosestPair(arr1: IntArray, arr2: IntArray, x: Int): ArrayList<Int?>? {
-//        var currentSum = 0
-//        var currentSumDiff = 0
-//        var minDiff = Int.MAX_VALUE
-//        val res = ArrayList<Int?>()
-//        // code here
-//        for (i in arr1.indices) {
-//            for (j in arr2.indices) {
-//                currentSum = arr1[i] + arr2[j]
-//                print("sumClosest: $currentSum\n")
-//                currentSumDiff = abs(currentSum - x)
-//                print("currentSumDiff: $currentSumDiff\n")
-//                if (currentSumDiff < minDiff) {
-//                    minDiff = currentSumDiff
-//                    print("currentSumDiff < minDiff: $currentSumDiff\n")
-//                    res.clear()
-//                    res.add(arr1[i])
-//                    res.add(arr2[j])
-//
-//                }
-//            }
-//        }
-//        return res
-//    }
+    fun findClosestPair(arr1: IntArray, arr2: IntArray, x: Int): ArrayList<Int?>? {
+        var currentSum = 0
+        var currentSumDiff = 0
+        var minDiff = Int.MAX_VALUE
+        val res = ArrayList<Int?>()
+        // code here
+        for (i in arr1.indices) {
+            for (j in arr2.indices) {
+                currentSum = arr1[i] + arr2[j]
+                print("sumClosest: $currentSum\n")
+                currentSumDiff = abs(currentSum - x)
+                print("currentSumDiff: $currentSumDiff\n")
+                if (currentSumDiff < minDiff) {
+                    minDiff = currentSumDiff
+                    print("currentSumDiff < minDiff: $currentSumDiff\n")
+                    res.clear()
+                    res.add(arr1[i])
+                    res.add(arr2[j])
+
+                }
+            }
+        }
+        return res
+    }
 
     /*
     * Input: x = 51, arr[] = [1, 4, 45, 6, 0, 19]
@@ -469,25 +469,30 @@ Output: 3
 Explanation: Minimum length subarray is [4, 45,
     *
     * */
-    fun smallestSubWithSum(x: Int, arr: IntArray?): Int {
+    fun smallestSubWithSum(x: Int, arr: IntArray): Int {
         // Your code goes here
-        val res = ArrayList<Int?>()
-        var currentSum = 0
-        for (i in arr!!.indices) {
-            currentSum += arr[i]
-            print("currentSum: $currentSum\n")
-            print("res: $res\n")
-            if (currentSum>x){
-                res.add(arr[i])
+        var minLength = Int.MAX_VALUE
 
+        for (i in arr.indices) {
+
+            val res = ArrayList<Int>()   // Current subarray
+            var currentSum = 0
+
+            for (j in i until arr.size) {
+
+                currentSum += arr[j]
+                res.add(arr[j])
+
+                println("Subarray = $res  Sum = $currentSum")
+
+                if (currentSum > x) {
+                    minLength = minOf(minLength, res.size)
+                    break
+                }
             }
-
-        }
-        for (i in res.indices){
-            print("res: ${res[i]}\n")
         }
 
-        return res.size
+        return if (minLength == Int.MAX_VALUE) 0 else minLength
     }
     fun smallestSubWithSums(x: Int, arr: IntArray): Int {
         var i = 0
