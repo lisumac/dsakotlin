@@ -1,6 +1,7 @@
 package string
 
 import kotlin.math.abs
+import kotlin.math.min
 
 
 class TwoPointer {
@@ -437,29 +438,83 @@ class TwoPointer {
         // code here
     }
 
-    fun findClosestPair(arr1: IntArray, arr2: IntArray, x: Int): ArrayList<Int?>? {
-        var currentSum = 0
-        var currentSumDiff = 0
-        var minDiff = Int.MAX_VALUE
-        val res = ArrayList<Int?>()
-        // code here
-        for (i in arr1.indices) {
-            for (j in arr2.indices) {
-                currentSum = arr1[i] + arr2[j]
-                print("sumClosest: $currentSum\n")
-                currentSumDiff = abs(currentSum - x)
-                print("currentSumDiff: $currentSumDiff\n")
-                if (currentSumDiff < minDiff) {
-                    minDiff = currentSumDiff
-                    print("currentSumDiff < minDiff: $currentSumDiff\n")
-                    res.clear()
-                    res.add(arr1[i])
-                    res.add(arr2[j])
+//    fun findClosestPair(arr1: IntArray, arr2: IntArray, x: Int): ArrayList<Int?>? {
+//        var currentSum = 0
+//        var currentSumDiff = 0
+//        var minDiff = Int.MAX_VALUE
+//        val res = ArrayList<Int?>()
+//        // code here
+//        for (i in arr1.indices) {
+//            for (j in arr2.indices) {
+//                currentSum = arr1[i] + arr2[j]
+//                print("sumClosest: $currentSum\n")
+//                currentSumDiff = abs(currentSum - x)
+//                print("currentSumDiff: $currentSumDiff\n")
+//                if (currentSumDiff < minDiff) {
+//                    minDiff = currentSumDiff
+//                    print("currentSumDiff < minDiff: $currentSumDiff\n")
+//                    res.clear()
+//                    res.add(arr1[i])
+//                    res.add(arr2[j])
+//
+//                }
+//            }
+//        }
+//        return res
+//    }
 
-                }
+    /*
+    * Input: x = 51, arr[] = [1, 4, 45, 6, 0, 19]
+Output: 3
+Explanation: Minimum length subarray is [4, 45,
+    *
+    * */
+    fun smallestSubWithSum(x: Int, arr: IntArray?): Int {
+        // Your code goes here
+        val res = ArrayList<Int?>()
+        var currentSum = 0
+        for (i in arr!!.indices) {
+            currentSum += arr[i]
+            print("currentSum: $currentSum\n")
+            print("res: $res\n")
+            if (currentSum>x){
+                res.add(arr[i])
+
             }
+
         }
-        return res
+        for (i in res.indices){
+            print("res: ${res[i]}\n")
+        }
+
+        return res.size
+    }
+    fun smallestSubWithSums(x: Int, arr: IntArray): Int {
+        var i = 0
+        var j = 0
+        var sum = 0
+        var ans = Int.MAX_VALUE
+
+        while (j < arr.size) {
+            while (j < arr.size && sum <= x) {
+                sum += arr[j++]
+            }
+            if (j == arr.size && sum <= x) break
+
+            // Minimize window from start while maintaining
+            // sum > x
+            while (i < j && sum - arr[i] > x) {
+                sum -= arr[i++]
+            }
+
+            ans = min(ans, j - i)
+
+            // Remove current start element and shift window
+            sum -= arr[i]
+            i++
+        }
+        if (ans == Int.MAX_VALUE) return 0
+        return ans
     }
 }
 
