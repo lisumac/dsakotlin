@@ -436,6 +436,31 @@ class TwoPointer {
         return res
         // code here
     }
+
+    fun findClosestPair(arr1: IntArray, arr2: IntArray, x: Int): ArrayList<Int?>? {
+        var currentSum = 0
+        var currentSumDiff = 0
+        var minDiff = Int.MAX_VALUE
+        val res = ArrayList<Int?>()
+        // code here
+        for (i in arr1.indices) {
+            for (j in arr2.indices) {
+                currentSum = arr1[i] + arr2[j]
+                print("sumClosest: $currentSum\n")
+                currentSumDiff = abs(currentSum - x)
+                print("currentSumDiff: $currentSumDiff\n")
+                if (currentSumDiff < minDiff) {
+                    minDiff = currentSumDiff
+                    print("currentSumDiff < minDiff: $currentSumDiff\n")
+                    res.clear()
+                    res.add(arr1[i])
+                    res.add(arr2[j])
+
+                }
+            }
+        }
+        return res
+    }
 }
 
 

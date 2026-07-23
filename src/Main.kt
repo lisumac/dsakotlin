@@ -97,8 +97,12 @@ fun main() {
     val rotatetarget = 10
    // val pairInSortedRotated = twoPointer.pairInSortedRotated(arrRotate, target = rotatetarget)
    // val pairInSortedRotatedalgo = twoPointer.pairInSortedRotatedalgo(arrRotate, target = rotatetarget)
-    val sumClosest = twoPointer.sumClosest(arrRotate, target = rotatetarget)
-    print("sumClosest:::$sumClosest")
+   // val sumClosest = twoPointer.sumClosest(arrRotate, target = rotatetarget)
+   var  arr1 = intArrayOf(1, 4, 5, 7)
+    var arr2 = intArrayOf(10, 20, 30, 40)
+    var target = 32
+    val findClosestPair = twoPointer.findClosestPair(arr1,arr2,target)
+    print("findClosestPair:::$findClosestPair")
 
 
 //    val silding= SlidingWindow()
