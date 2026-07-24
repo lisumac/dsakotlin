@@ -494,6 +494,7 @@ Explanation: Minimum length subarray is [4, 45,
 
         return if (minLength == Int.MAX_VALUE) 0 else minLength
     }
+
     fun smallestSubWithSums(x: Int, arr: IntArray): Int {
         var i = 0
         var j = 0
@@ -520,6 +521,28 @@ Explanation: Minimum length subarray is [4, 45,
         }
         if (ans == Int.MAX_VALUE) return 0
         return ans
+    }
+
+    fun pushZerosToEnd(arr: IntArray): IntArray {
+        var left = 0
+        var right = 0
+
+        while (right < arr.size) {
+
+            if (arr[right] != 0) {
+                val temp = arr[left]
+                arr[left] = arr[right]
+                arr[right] = temp
+                left++
+            }
+
+            right++
+        }
+        for ( i in arr.indices) {
+            print(arr[i] )
+        }
+
+        return arr
     }
 }
 

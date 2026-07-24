@@ -102,9 +102,12 @@ fun main() {
     //var arr2 = intArrayOf(10, 20, 30, 40)
     var target = 51
     //val findClosestPair = twoPointer.findClosestPair(arr1,arr2,target)
-    val smallestSubWithSum = twoPointer.smallestSubWithSums(target, arr1)
+   // val smallestSubWithSum = twoPointer.smallestSubWithSums(target, arr1)
    // print("findClosestPair:::$findClosestPair")
-   print("smallestSubWithSum:::$smallestSubWithSum")
+  // print("smallestSubWithSum:::$smallestSubWithSum")
+    //pushZerosToEnd
+    val pushZerosToEnd = twoPointer.pushZerosToEnd(intArrayOf(1, 2, 0, 4, 3, 0, 5, 0))
+    print("pushZerosToEnd:::$pushZerosToEnd")
 
 
 //    val silding= SlidingWindow()
