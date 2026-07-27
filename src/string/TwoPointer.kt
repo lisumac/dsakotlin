@@ -544,6 +544,25 @@ Explanation: Minimum length subarray is [4, 45,
 
         return arr
     }
+    fun removeDuplicatesArr(arr: IntArray): ArrayList<Int?>? {
+        val res = ArrayList<Int?>()
+        // Start from the second element
+        var idx = 1
+
+//        for (i in 1..<n) {
+//            if (arr[i] != arr[i - 1]) {
+//                arr[idx++] = arr[i]
+//            }
+//        }
+//        return idx
+
+        for ( i in arr.indices) {
+            if (!res.contains(arr[i])) {
+                res.add(arr[i])
+            }
+        }
+        return res
+    }
 }
 
 
