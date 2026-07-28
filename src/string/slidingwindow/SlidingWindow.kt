@@ -48,14 +48,6 @@ class SlidingWindow {
         return maxsum
     }
 
-    fun subString(email: String): Boolean {
 
-        if (email.trim().contains("@")) {
-            if (email.trim().substringAfter("@").contains(".") ) {
-                return true
-            }
-        }
-        return false
-    }
 
 }

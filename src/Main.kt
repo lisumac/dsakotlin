@@ -1,3 +1,4 @@
+import kotlindsa.KotlinLogicalDSA
 import string.TwoPointer
 import string.slidingwindow.SlidingWindow
 import kotlin.math.min
@@ -113,10 +114,13 @@ fun main() {
 //    print("removeDuplicatesArr:::$removeDuplicatesArr")
 
 
-    val silding= SlidingWindow()
+   // val silding= SlidingWindow()
    // val maximumSubarraySum = silding.maxSubarraySum(intArrayOf(1, 4, 2, 10, 23, 3, 1, 0, 20), 4)
-    val emailValid = silding.subString("lisa.das@gmail.com")
+    val kotlinLogicalDSA = KotlinLogicalDSA()
+    val emailValid = kotlinLogicalDSA.subString("lisa.das@gmail.com")
+    val getFrequencyNumber = kotlinLogicalDSA.getFrequencyNumber("a11472o5t6")
     print("emailValid:::$emailValid")
+    print("getFrequencyNumber:::$getFrequencyNumber")
 }
 
 fun largestNumber(nums: IntArray): String {
