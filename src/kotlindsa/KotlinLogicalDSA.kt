@@ -16,8 +16,6 @@ class KotlinLogicalDSA {
                 hashMap[i] = hashMap.getOrDefault(i, 0)+1
 
             }
-
-
         }
         for (digit in '0'..'9') {
             print("${hashMap.getOrDefault(digit, 0)} ")
