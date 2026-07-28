@@ -29,52 +29,33 @@ class SlidingWindow {
         return ans
     }
 
-    fun maximumSubarraySum(nums: IntArray, k: Int): Long {
-        //intArrayOf(1,5,4,2,9,9,9), 3)
-        var n = nums.size
+    fun maxSubarraySum(array: IntArray, target: Int): Int {
+        var sum = 0
 
-
-        var subarry: ArrayList<Int> = ArrayList()
-        var maxSum = Int.MIN_VALUE
-        for (i in 0 until n - k + 1) {
-            var currentSum = 0
-            for (j in 0 until k) {
-
-                print("\ni\n" + nums[i])
-                print("\nj\n" + nums[j])
-                currentSum = currentSum - nums[i] + nums[j]
-                print("currentSum\n" + currentSum)
-
-                maxSum = maxOf(currentSum, maxSum)
-
-
-            }
-            //if (subarry.dis)
-            return maxSum.toLong()
+        for (index in 0 until target) {
+            print("index: ${array[index]}\n")
+            sum += array[index]
+        }
+        var maxsum = sum
+        for (i in target until array.size) {
+            print("i: ${array[i]}\n")
+            print("i>>: ${array[i] - array[i - target]}\n")
+            sum += array[i] - array[i - target]
+            print("sum: $sum\n")
+            maxsum = max(sum, maxsum)
 
         }
-
-
-        fun maxSubarraySum(nums: IntArray, k: Int): Int {
-            var n = nums.size
-
-
-            // Initialize result
-            var max_sum = Int.MIN_VALUE
-
-            for (i in 0..<n - k + 1) {
-                var current_sum = 0
-                for (j in 0..<k) current_sum += nums[i + j]
-
-                // Update result if required.
-                max_sum = max(current_sum, max_sum)
-            }
-
-            return max_sum
-
-        }
-
-
-        return TODO("Provide the return value")
+        return maxsum
     }
+
+    fun subString(email: String): Boolean {
+
+        if (email.trim().contains("@")) {
+            if (email.trim().substringAfter("@").contains(".") ) {
+                return true
+            }
+        }
+        return false
+    }
+
 }

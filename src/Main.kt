@@ -109,14 +109,14 @@ fun main() {
 //    val pushZerosToEnd = twoPointer.pushZerosToEnd(intArrayOf(1, 2, 0, 4, 3, 0, 5, 0))
 //    print("pushZerosToEnd:::$pushZerosToEnd")
     //removeDuplicatesArr
-    val removeDuplicatesArr = twoPointer.removeDuplicatesArr(intArrayOf(1, 2, 2, 3, 4, 4, 4, 5, 5 ))
-    print("removeDuplicatesArr:::$removeDuplicatesArr")
+//    val removeDuplicatesArr = twoPointer.removeDuplicatesArr(intArrayOf(1, 2, 2, 3, 4, 4, 4, 5, 5 ))
+//    print("removeDuplicatesArr:::$removeDuplicatesArr")
 
 
-//    val silding= SlidingWindow()
-//    val subarry = silding.longestNiceSubstring("YazaAay")
-//    val maximumSubarraySum = silding.maximumSubarraySum(intArrayOf(1,5,4,2,9,9,9), 3)
-
+    val silding= SlidingWindow()
+   // val maximumSubarraySum = silding.maxSubarraySum(intArrayOf(1, 4, 2, 10, 23, 3, 1, 0, 20), 4)
+    val emailValid = silding.subString("lisa.das@gmail.com")
+    print("emailValid:::$emailValid")
 }
 
 fun largestNumber(nums: IntArray): String {
