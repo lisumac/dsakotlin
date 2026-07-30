@@ -48,6 +48,75 @@ class SlidingWindow {
         return maxsum
     }
 
+    fun smallestSubstring(s: String): Int {
+        // code here
+        var subStrings = ""
+        var ans = Int.MAX_VALUE
+        for (i in s.indices) {
+            subStrings += s[i]
+            print("stringlength:1:: ${subStrings.length}\n")
+            while (subStrings.contains('1') && subStrings.contains('0') && subStrings.contains('2')) {
+                print("stringlength: ${subStrings.length}\n")
+                ans = minOf(ans, subStrings.length)
 
+                // Remove only the first character
+                subStrings = subStrings.substring(1)
+            }
+        }
+        print("And+ans: $ans\n")
+        print("And+ans: ${Int.MAX_VALUE}\n")
+        return if (ans == Int.MAX_VALUE) -1 else ans
+    }
 
+    fun search(txt: String, pat: String): String {
+
+        val patMap = HashMap<Char, Int>()
+
+        // Frequency of pattern
+        for (ch in pat) {
+            patMap[ch] = patMap.getOrDefault(ch, 0) + 1
+        }
+
+        var window = ""
+
+        for (i in txt.indices) {
+
+            window += txt[i]
+
+            if (window.length > pat.length) {
+                window = window.substring(1)
+            }
+
+            if (window.length == pat.length) {
+
+                val windowMap = HashMap<Char, Int>()
+
+                for (ch in window) {
+                    windowMap[ch] = windowMap.getOrDefault(ch, 0) + 1
+                }
+
+                if (windowMap == patMap) {
+                    return window
+                }
+            }
+        }
+
+        return ""
+    }
+    fun countIncreasing(arr: IntArray): Int {
+        // code here
+        var count = 0
+        for (start in arr.indices) {
+
+            for (end in start + 1 until arr.size) {
+
+                if (arr[end] > arr[end - 1]) {
+                    count++
+                }else{
+                    break
+                }
+            }
+        }
+        return count
+    }
 }

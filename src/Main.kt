@@ -114,13 +114,18 @@ fun main() {
 //    print("removeDuplicatesArr:::$removeDuplicatesArr")
 
 
-   // val silding= SlidingWindow()
+    val silding= SlidingWindow()
    // val maximumSubarraySum = silding.maxSubarraySum(intArrayOf(1, 4, 2, 10, 23, 3, 1, 0, 20), 4)
-    val kotlinLogicalDSA = KotlinLogicalDSA()
-    val emailValid = kotlinLogicalDSA.subString("lisa.das@gmail.com")
-    val getFrequencyNumber = kotlinLogicalDSA.getFrequencyNumber("a11472o5t6")
-    print("emailValid:::$emailValid")
-    print("getFrequencyNumber:::$getFrequencyNumber")
+   // val smallestSubstring = silding.smallestSubstring("111102")
+    //val smallestSubstring = silding.smallestSubstring("11102")
+    val search = silding.search("geeks", "eke")
+    val countIncreasing = silding.countIncreasing(intArrayOf(1, 4, 5, 3, 7, 9))
+    print("countIncreasing:::$countIncreasing")
+//    val kotlinLogicalDSA = KotlinLogicalDSA()
+//    val emailValid = kotlinLogicalDSA.subString("lisa.das@gmail.com")
+//    val getFrequencyNumber = kotlinLogicalDSA.getFrequencyNumber("a11472o5t6")
+//    print("emailValid:::$emailValid")
+//    print("getFrequencyNumber:::$getFrequencyNumber")
 }
 
 fun largestNumber(nums: IntArray): String {
