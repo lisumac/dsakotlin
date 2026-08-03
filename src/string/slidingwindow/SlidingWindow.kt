@@ -149,20 +149,30 @@ class SlidingWindow {
     }
 
     fun findMaxAverage(nums: IntArray, k: Int): Double {
+
         var sum = 0.0
+        for (i in 0 until k) {
+            sum += nums[i]
+        }
+
+        // FIX 2: Initialize 'maximusAvg' to the first window's average instead of 0.0
+        var maximusAvg = sum / k
         var currentmaximusAvg = 0.0
-        var maximusAvg = 0.0
-        for (start in 0 until k) {
-            //print("nums[start: ${nums[start]}\n")
-            sum += nums[start]
-            print("currentSum: $sum\n")
+        var left = 0
+        for (right in k until nums.size) {
+
+            sum -= nums[left]      // Remove old element
+
+            sum += nums[right]     // Add new element
+
+            left++                 // Move left pointer
+
             currentmaximusAvg = sum / k
-            print("currentmaximusAvg: $currentmaximusAvg\n")
-            if (currentmaximusAvg < maximusAvg) {
-                sum -= nums[start]
-            } else {
+
+            if (currentmaximusAvg > maximusAvg) {
                 maximusAvg = currentmaximusAvg
             }
+
         }
         return maximusAvg
     }
