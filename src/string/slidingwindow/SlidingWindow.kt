@@ -103,6 +103,7 @@ class SlidingWindow {
 
         return ""
     }
+
     fun countIncreasing(arr: IntArray): Int {
         // code here
         var count = 0
@@ -112,11 +113,57 @@ class SlidingWindow {
 
                 if (arr[end] > arr[end - 1]) {
                     count++
-                }else{
+                } else {
                     break
                 }
             }
         }
         return count
+    }
+
+    /**
+     * Input: arr[] = [1, 2, 3, 4, 5], x = 11
+     * Output: 10
+     * Explanation: Subarray having maximum sum is [1, 2, 3, 4].
+     */
+    fun maxSum(arr: IntArray, target: Int): Int {
+        // code here
+        var left = 0
+        var currentSum = 0
+        var maxSum = 0
+        for (start in 0 until arr.size - 1) {
+            if (arr[start] <= target) {
+                currentSum += arr[start]
+                print("currentSum: $currentSum\n")
+                while (currentSum > target) {
+                    currentSum -= arr[left]
+                    left++
+                }
+                maxSum = maxOf(currentSum, maxSum)
+
+            }
+
+
+        }
+        return maxSum
+    }
+
+    fun findMaxAverage(nums: IntArray, k: Int): Double {
+        var sum = 0.0
+        var currentmaximusAvg = 0.0
+        var maximusAvg = 0.0
+        for (start in 0 until k) {
+            //print("nums[start: ${nums[start]}\n")
+            sum += nums[start]
+            print("currentSum: $sum\n")
+            currentmaximusAvg = sum / k
+            print("currentmaximusAvg: $currentmaximusAvg\n")
+            if (currentmaximusAvg < maximusAvg) {
+                sum -= nums[start]
+            } else {
+                maximusAvg = currentmaximusAvg
+            }
+        }
+        return maximusAvg
     }
 }
