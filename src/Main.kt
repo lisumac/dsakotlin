@@ -1,5 +1,6 @@
 import kotlindsa.KotlinLogicalDSA
 import string.TwoPointer
+import string.slidingwindow.HasMapWithSlidingWindow
 import string.slidingwindow.SlidingWindow
 import kotlin.math.min
 
@@ -121,13 +122,19 @@ fun main() {
    // val search = silding.search("geeks", "eke")
    // val countIncreasing = silding.countIncreasing(intArrayOf(1, 4, 5, 3, 7, 9))
    // val maxSum = silding.maxSum(intArrayOf(1, 2, 3, 4, 5),11)
-    val findMaxAverage = silding.findMaxAverage(intArrayOf(1,12,-5,-6,50,3),4)
-    print("findMaxAverage:::$findMaxAverage")
+   // val findMaxAverage = silding.findMaxAverage(intArrayOf(1,12,-5,-6,50,3),4)
+   // print("findMaxAverage:::$findMaxAverage")
+
 //    val kotlinLogicalDSA = KotlinLogicalDSA()
 //    val emailValid = kotlinLogicalDSA.subString("lisa.das@gmail.com")
 //    val getFrequencyNumber = kotlinLogicalDSA.getFrequencyNumber("a11472o5t6")
 //    print("emailValid:::$emailValid")
 //    print("getFrequencyNumber:::$getFrequencyNumber")
+    val hasMapWithSlidingWindow= HasMapWithSlidingWindow()
+    val containsNearbyDuplicate = hasMapWithSlidingWindow.containsNearbyDuplicate(intArrayOf(1,2,3,1),3)
+    print("containsNearbyDuplicate:::$containsNearbyDuplicate")
+
+
 }
 
 fun largestNumber(nums: IntArray): String {
