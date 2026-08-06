@@ -131,8 +131,9 @@ fun main() {
 //    print("emailValid:::$emailValid")
 //    print("getFrequencyNumber:::$getFrequencyNumber")
     val hasMapWithSlidingWindow= HasMapWithSlidingWindow()
-    val containsNearbyDuplicate = hasMapWithSlidingWindow.containsNearbyDuplicate(intArrayOf(1,2,3,1),3)
-    print("containsNearbyDuplicate:::$containsNearbyDuplicate")
+   // val containsNearbyDuplicate = hasMapWithSlidingWindow.containsNearbyDuplicate(intArrayOf(1,2,3,1),3)
+    val findLHS = hasMapWithSlidingWindow.findLHS(intArrayOf(1,3,2,2,5,2,3,7))
+    print("findLHS:::$findLHS")
 
 
 }
