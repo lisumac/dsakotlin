@@ -538,12 +538,13 @@ Explanation: Minimum length subarray is [4, 45,
 
             right++
         }
-        for ( i in arr.indices) {
-            print(arr[i] )
+        for (i in arr.indices) {
+            print(arr[i])
         }
 
         return arr
     }
+
     fun removeDuplicatesArr(arr: IntArray): ArrayList<Int?>? {
         val res = ArrayList<Int?>()
         // Start from the second element
@@ -556,12 +557,46 @@ Explanation: Minimum length subarray is [4, 45,
 //        }
 //        return idx
 
-        for ( i in arr.indices) {
+        for (i in arr.indices) {
             if (!res.contains(arr[i])) {
                 res.add(arr[i])
             }
         }
         return res
+    }
+
+    fun removeElement(nums: IntArray, `val`: Int): Int {
+
+        var left = 0
+        var right = 0
+        var intArray = ArrayList<Int>()
+
+        while (left < nums.size) {
+            if (nums[left] != `val`) {
+                print("nums[right]: ${nums[left]}\n")
+                nums[right] = nums[left]
+                right++
+
+            }
+            left++
+
+        }
+
+        return intArray.size
+    }
+
+    fun countKDifference(nums: IntArray, k: Int): Int {
+        var left = 0
+        var right = 1
+        var hashMap = HashMap<Int, Int>()
+        while (right < nums.size) {
+            if (Math.abs(nums[left] - nums[right]) == k) {
+                hashMap.put(left, right)
+            }
+            left++
+            right++
+        }
+
     }
 }
 

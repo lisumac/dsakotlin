@@ -113,8 +113,10 @@ fun main() {
     //removeDuplicatesArr
 //    val removeDuplicatesArr = twoPointer.removeDuplicatesArr(intArrayOf(1, 2, 2, 3, 4, 4, 4, 5, 5 ))
 //    print("removeDuplicatesArr:::$removeDuplicatesArr")
+   val numsd = intArrayOf(0,1,2,2,3,0,4,2)
 
-
+    val removeElement = twoPointer.removeElement(numsd,2)
+    print("removeElement:::$removeElement")
     val silding= SlidingWindow()
    // val maximumSubarraySum = silding.maxSubarraySum(intArrayOf(1, 4, 2, 10, 23, 3, 1, 0, 20), 4)
    // val smallestSubstring = silding.smallestSubstring("111102")
@@ -130,10 +132,10 @@ fun main() {
 //    val getFrequencyNumber = kotlinLogicalDSA.getFrequencyNumber("a11472o5t6")
 //    print("emailValid:::$emailValid")
 //    print("getFrequencyNumber:::$getFrequencyNumber")
-    val hasMapWithSlidingWindow= HasMapWithSlidingWindow()
-   // val containsNearbyDuplicate = hasMapWithSlidingWindow.containsNearbyDuplicate(intArrayOf(1,2,3,1),3)
-    val findLHS = hasMapWithSlidingWindow.findLHS(intArrayOf(1,3,2,2,5,2,3,7))
-    print("findLHS:::$findLHS")
+//    val hasMapWithSlidingWindow= HasMapWithSlidingWindow()
+//   // val containsNearbyDuplicate = hasMapWithSlidingWindow.containsNearbyDuplicate(intArrayOf(1,2,3,1),3)
+//    val findLHS = hasMapWithSlidingWindow.findLHS(intArrayOf(1,3,2,2,5,2,3,7))
+//    print("findLHS:::$findLHS")
 
 
 }
