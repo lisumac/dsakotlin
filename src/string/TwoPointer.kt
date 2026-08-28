@@ -585,18 +585,73 @@ Explanation: Minimum length subarray is [4, 45,
         return intArray.size
     }
 
-    fun countKDifference(nums: IntArray, k: Int): Int {
+//    fun countKDifference(nums: IntArray, k: Int): Int {
+//        var left = 0
+//        var right = 1
+//        var hashMap = HashMap<Int, Int>()
+//        while (right < nums.size) {
+//            if (Math.abs(nums[left] - nums[right]) == k) {
+//                hashMap.put(left, right)
+//            }
+//            left++
+//            right++
+//        }
+//
+//    }
+    fun countPairs(nums: IntArray, k: Int): Int {
+        // code here
+    var left = 0
+    var right = 1
+    var count = 0
+
+    while (left < nums.size - 1) {
+
+        if (right >= nums.size) {
+            left++
+            right = left + 1
+            continue
+        }
+
+        if (abs(nums[left] - nums[right]) == k) {
+            count++
+        }
+
+        right++
+    }
+
+    return count
+    }
+
+    fun findPairs(nums: IntArray, k: Int): Int {
+
+        val hashMap = HashMap<Int, Int>()
         var left = 0
         var right = 1
-        var hashMap = HashMap<Int, Int>()
-        while (right < nums.size) {
-            if (Math.abs(nums[left] - nums[right]) == k) {
-                hashMap.put(left, right)
+        var count = 0
+
+        while (left < nums.size - 1) {
+
+            if (right >= nums.size) {
+                left++
+                right = left + 1
+                continue
             }
-            left++
+
+
+            if (abs(nums[left] - nums[right]) == k) {
+               hashMap.put(left, right)
+            }
+
             right++
         }
 
+        for (num in hashMap.keys) {
+
+            if (hashMap.containsKey(num + k)) {
+                count++
+            }
+        }
+        return count
     }
 }
 

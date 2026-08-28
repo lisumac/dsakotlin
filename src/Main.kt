@@ -113,10 +113,13 @@ fun main() {
     //removeDuplicatesArr
 //    val removeDuplicatesArr = twoPointer.removeDuplicatesArr(intArrayOf(1, 2, 2, 3, 4, 4, 4, 5, 5 ))
 //    print("removeDuplicatesArr:::$removeDuplicatesArr")
-   val numsd = intArrayOf(0,1,2,2,3,0,4,2)
+   val numsd = intArrayOf(3,1,4,1,5)
 
-    val removeElement = twoPointer.removeElement(numsd,2)
-    print("removeElement:::$removeElement")
+    //val removeElement = twoPointer.removeElement(numsd,2)
+    val countPairs = twoPointer.countPairs(numsd,2)
+    val findPairs = twoPointer.findPairs(numsd,2)
+    print("countPairs:::$countPairs")
+    print("findPairs:::$findPairs")
     val silding= SlidingWindow()
    // val maximumSubarraySum = silding.maxSubarraySum(intArrayOf(1, 4, 2, 10, 23, 3, 1, 0, 20), 4)
    // val smallestSubstring = silding.smallestSubstring("111102")
