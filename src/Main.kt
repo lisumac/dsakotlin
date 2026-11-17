@@ -1,4 +1,5 @@
 import kotlindsa.KotlinLogicalDSA
+import printing.PrintingProblems
 import string.TwoPointer
 import string.slidingwindow.HasMapWithSlidingWindow
 import string.slidingwindow.SlidingWindow
@@ -8,10 +9,12 @@ import kotlin.math.min
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
 
-
-    val nums = intArrayOf(89, 30, 34, -1, 5, 9, 1, 0, 98)
-    val numsreverse = intArrayOf(1, 2, 3, 4)
-    val reverseString = "android"
+    val printingProblems = PrintingProblems()
+    print(printingProblems.printText())
+    print("naturalnumberSum"+printingProblems.isPrime(5))
+//    val nums = intArrayOf(89, 30, 34, -1, 5, 9, 1, 0, 98)
+//    val numsreverse = intArrayOf(1, 2, 3, 4)
+//    val reverseString = "android"
 
 //    val palindarome = "madam"
 //   println("smalles:: ${smallestNumber(nums)}")
@@ -79,13 +82,13 @@ fun main() {
     //val validPalindrom = twoPointer.longestPalindrome("babad")
     // println("larget string: $largetString")
     // println("validPalindrom: $validPalindrom")
-    val numsArray = intArrayOf(10, 20, 35, 50)
-    val twosum = twoPointer.targetTwoSum(numsArray, 70)
-    val twosumarray = twoPointer.twoSum(numsArray, 70)
-    val input = intArrayOf(10, 20, 30)
-    val moveZero = twoPointer.moveZeroes(input)
-    val duplicateArry = intArrayOf(0, 0, 1, 1, 1, 2, 2, 3, 3, 4)
-    val removeDuplicates = twoPointer.removeDuplicates(duplicateArry)
+//    val numsArray = intArrayOf(10, 20, 35, 50)
+//    val twosum = twoPointer.targetTwoSum(numsArray, 70)
+//    val twosumarray = twoPointer.twoSum(numsArray, 70)
+//    val input = intArrayOf(10, 20, 30)
+//    val moveZero = twoPointer.moveZeroes(input)
+//    val duplicateArry = intArrayOf(0, 0, 1, 1, 1, 2, 2, 3, 3, 4)
+//    val removeDuplicates = twoPointer.removeDuplicates(duplicateArry)
     //      val  reverseWords= twoPointer.reverseWordsten("Mr Ding")
     // println("removeDuplicates: $reverseWords")
 
@@ -116,11 +119,11 @@ fun main() {
    val numsd = intArrayOf(3,1,4,1,5)
 
     //val removeElement = twoPointer.removeElement(numsd,2)
-    val countPairs = twoPointer.countPairs(numsd,2)
-    val findPairs = twoPointer.findPairs(numsd,2)
-    print("countPairs:::$countPairs")
-    print("findPairs:::$findPairs")
-    val silding= SlidingWindow()
+//    val countPairs = twoPointer.countPairs(numsd,2)
+//    val findPairs = twoPointer.findPairs(numsd,2)
+//    print("countPairs:::$countPairs")
+//    print("findPairs:::$findPairs")
+//    val silding= SlidingWindow()
    // val maximumSubarraySum = silding.maxSubarraySum(intArrayOf(1, 4, 2, 10, 23, 3, 1, 0, 20), 4)
    // val smallestSubstring = silding.smallestSubstring("111102")
     //val smallestSubstring = silding.smallestSubstring("11102")
