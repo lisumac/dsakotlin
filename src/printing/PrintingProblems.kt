@@ -94,5 +94,34 @@ class PrintingProblems {
         return reverse
     }
 
+    fun sumOfDigits(n: Int): Int {
+        var temp = n
+        var sum = 0
 
+        while (temp > 0) {
+            val digit = temp % 10
+            sum += digit
+            temp /= 10
+        }
+        return sum
+    }
+
+    fun countDigits(n: Int): Int {
+        // Code here
+        var temp = n
+        var count = 0
+
+        while (temp > 0) {
+            val digit = temp % 10
+            count++
+            temp /= 10
+        }
+        return count
+
+    }
+
+    fun armstrongNumber(n: Int): Boolean {
+        // code here
+        return false
+    }
 }
