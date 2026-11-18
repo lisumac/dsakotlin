@@ -62,4 +62,37 @@ class PrintingProblems {
     }
     //Check whether a number is palindrome
 
+    fun isPalindrome(n: Int): Boolean {
+        val original = n
+        var temp = n
+        var reverse = 0
+
+        if (n < 0) return false
+
+        while (temp > 0) {
+            val digit = temp % 10
+            reverse = reverse * 10 + digit
+            temp = temp / 10
+        }
+
+        return original == reverse
+    }
+
+    fun reverseDigits(n: Int): Int {
+        // Code here
+
+        var temp = n
+        var reverse = 0
+
+
+
+        while (temp > 0) {
+            val digit = temp % 10
+            reverse = reverse * 10 + digit
+            temp = temp / 10
+        }
+        return reverse
+    }
+
+
 }
