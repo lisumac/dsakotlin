@@ -122,6 +122,14 @@ class PrintingProblems {
 
     fun armstrongNumber(n: Int): Boolean {
         // code here
-        return false
+        var temp = n
+        var count = 0
+
+        while (temp > 0) {
+            val digit = temp % 10
+            count++
+            temp /= 10
+        }
+
     }
 }
