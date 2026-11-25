@@ -1,5 +1,7 @@
 package printing
 
+import kotlin.math.pow
+
 class PrintingProblems {
     //Print "Hello World".
     fun printText() {
@@ -120,16 +122,32 @@ class PrintingProblems {
 
     }
 
-    fun armstrongNumber(n: Int): Boolean {
-        // code here
+    fun armstrongNumber(n: Int) {
         var temp = n
         var count = 0
+        var sum = 0
 
+        // First loop: Count digits
         while (temp > 0) {
-            val digit = temp % 10
             count++
             temp /= 10
         }
 
+        // Reset temp
+        temp = n
+
+        // Second loop: Calculate power of each digit
+        while (temp > 0) {
+            val digit = temp % 10
+
+            val power = digit.toDouble().pow(count).toInt()
+
+            sum += power
+
+            temp /= 10
+        }
+
+        println("digit count: $count")
+        println("sum: $sum")
     }
 }
